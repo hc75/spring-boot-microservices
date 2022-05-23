@@ -1,0 +1,28 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: DEPARTMENT-SERVICE
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysqlservice:3306/microservices?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 75Redeyef1344
+  jpa:
+    hibernate.ddl-auto: create
+    generate-ddl: true
+    show-sql: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-0
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
+
